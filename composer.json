@@ -1,0 +1,18 @@
+{
+    "name": "sonawap/paystack",
+    "description": "This library will help you manage and you paystack api",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sonawap",
+            "email": "paulsola79@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            
+        }
+    },
+    "require": {}
+}

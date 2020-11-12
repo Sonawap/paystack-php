@@ -1,6 +1,6 @@
 {
     "name": "sonawap/paystack",
-    "description": "This library will help you manage and you paystack api",
+    "description": "This library will help you manage and use paystack api",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            
+
         }
     },
     "require": {}

@@ -1,8 +1,22 @@
 <?php
+namespace Transaction\Transaction;
+/**
+ * Paystack - Use paystack apis
+ * Version 1.0.
+ *
+ * @see https://github.com/Sonawap/paystack-php/ The payStackPhp GitHub project
+ *
+ * @author Sonawap - Paul Sola Moses - whatsapp - +234 70 6542 5688 - email: Paulsola79@gmail.com 
+ * 
+ * @Twitter - https://twitter.com/sonawap
+ * @Intagram - https://instagram.com/sonawap
+ * @facebook - https://facebook.com/paul.sola.986
+ * 
+ **/
 require_once('config.php');
 require_once('request/excute.php');
 
-class transaction extends excuteAction
+class transaction extends \Transaction\Transaction\Excute\excuteAction
 {
 
 	// Initialize a transaction from your backend
@@ -26,7 +40,7 @@ class transaction extends excuteAction
 
 	]*/
   	public function initializeTransaction($fields){
-  		return $excute->excutePost(INITIALIZE_TRANSACTION, $fields);
+  		return $this->excutePost(INITIALIZE_TRANSACTION, $fields);
   	}
 
   	// All authorizations marked as reusable can be charged with this endpoint whenever you need to recieve payments.
@@ -130,8 +144,8 @@ class transaction extends excuteAction
 		'id' => , Integer
 
 	]*/
-  	public function fetchTransaction($id){
-  		return $this->excute(FETCH_TRANSACTION.$id);
+  	public function fetchTransaction($id, array $params = []){
+  		return $this->excute(FETCH_TRANSACTION.$id, $params);
   	}
 
   	// Confirm the status of a transaction
@@ -143,8 +157,8 @@ class transaction extends excuteAction
 		'reference' => "", String
 
 	]*/
-  	public function verifyTransaction($reference){
-  		return $this->excute(VERIFY_TRANSACTION.$reference);
+  	public function verifyTransaction($reference, array $params = []){
+  		return $this->excute(VERIFY_TRANSACTION.$reference, $params);
   	}
 
   	//// VTT = View Transaction Timeline
@@ -156,8 +170,8 @@ class transaction extends excuteAction
 		'id_or_reference' => "", String
 
 	]*/
-  	public function VTT($idOrReference){
-  		return $this->excute(VIEW_TRANSATION_TIMELINE.$idOrReference);
+  	public function VTT($idOrReference, array $params = []){
+  		return $this->excute(VIEW_TRANSATION_TIMELINE.$idOrReference, $params);
   	}
 
 
@@ -185,5 +199,4 @@ class transaction extends excuteAction
   
 }
 
-$transaction = new transaction();
 ?>

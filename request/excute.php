@@ -1,13 +1,28 @@
 <?php
+namespace Transaction\Transaction\Excute;
+
+use Transaction\Transaction\Excute\initializeAction\initializeAction;
 
 require 'initialize.php';
-
+/**
+ * Paystack - Use paystack apis
+ * Version 1.0.
+ *
+ * @see https://github.com/Sonawap/paystack-php/ The payStackPhp GitHub project
+ *
+ * @author Sonawap - Paul Sola Moses - whatsapp - +234 70 6542 5688 - email: Paulsola79@gmail.com 
+ * 
+ * @Twitter - https://twitter.com/sonawap
+ * @Intagram - https://instagram.com/sonawap
+ * @facebook - https://facebook.com/paul.sola.986
+ * 
+ **/
 // use initializeAction;
 /**
  * 
   excute a connect to paystack api
  */
-class excuteAction extends initializeAction\initializeAction
+class excuteAction extends initializeAction
 {
 	 protected function excute($url, array $params){
 		
@@ -49,4 +64,6 @@ class excuteAction extends initializeAction\initializeAction
   	}
 }
 
-$excute = new excuteAction();
+// $excute = new excuteAction();
+
+?>

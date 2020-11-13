@@ -1,5 +1,5 @@
 <?php
-namespace Transaction\Transaction\Excute\initializeAction;
+namespace Transaction\Excute\initializeAction;
 /**
  * Paystack - Use paystack apis
  * Version 1.0.

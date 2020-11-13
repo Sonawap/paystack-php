@@ -1,7 +1,7 @@
 <?php
-require_once('../../transactions.php');
+require_once('../../core/transactions.php');
 
-use Transaction\Transaction\transaction as transaction;
+use Transaction\transaction as transaction;
 
 $transaction = new transaction();
 	// List transactions carried out on your integration

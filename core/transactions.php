@@ -1,5 +1,5 @@
 <?php
-namespace Transaction\Transaction;
+namespace Transaction;
 /**
  * Paystack - Use paystack apis
  * Version 1.0.
@@ -13,10 +13,10 @@ namespace Transaction\Transaction;
  * @facebook - https://facebook.com/paul.sola.986
  * 
  **/
-require_once('config.php');
-require_once('request/excute.php');
+require 'config.php';
+require 'request/excute.php';
 
-class transaction extends \Transaction\Transaction\Excute\excuteAction
+class transaction extends \Transaction\Excute\excuteAction
 {
 
 	// Initialize a transaction from your backend

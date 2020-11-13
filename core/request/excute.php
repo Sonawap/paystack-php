@@ -1,7 +1,7 @@
 <?php
-namespace Transaction\Transaction\Excute;
+namespace Transaction\Excute;
 
-use Transaction\Transaction\Excute\initializeAction\initializeAction;
+use Transaction\Excute\initializeAction\initializeAction;
 
 require 'initialize.php';
 /**

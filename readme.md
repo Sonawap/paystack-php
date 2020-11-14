@@ -68,7 +68,7 @@ $transaction->chargeAuthorization(
 );
 ```
 ```php
-/// Charge Authorization
+/// Check Authorization
 
 $transaction->checkAuthorization($fields) //$field as to be array
 ```

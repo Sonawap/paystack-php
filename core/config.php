@@ -21,14 +21,14 @@ Go to setting -> developer to see your keys*/
 // SET SECRET KEY HERE
 define(
 	'SECRET', 
-	'sk_test_ec6b20250f18e5ea330ec96fe953a6a12f964bdb' ///replace with your secret key
+	'Your Secret key' ///replace with your secret key
 );
 
 // SET PUBLIC KEY HERE
 
 define(
 	'PUBLIC',
-	'pk_test_86cbdfd80c66744392319018049cec6c70629309' ///replace with your public key
+	'Your public key' ///replace with your public key
 );
 
 

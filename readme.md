@@ -12,7 +12,9 @@ Composer require sonawap/paystack
 
 Go to vendor > sonawap > paystack > core > config > config.php then replace with your key
 
-## Include the autoload file
+Create a new file index.php
+
+Include the autoload file
 
 ```php
 <?php
@@ -21,7 +23,6 @@ require 'vendor/autoload.php';
 
 Using the Library
 
-Create a new file index.php
 
 ```php
 use Sonawap\Paystack\Transaction\Transaction;
@@ -50,8 +51,10 @@ $transaction->initializeTransaction(
         'amount' => "20000",
     ]
 );
-
+```
+```php
 /// Charge Authorization
+
 $transaction->chargeAuthorization($fields) //$field as to be array
 ```
 Example
@@ -63,8 +66,10 @@ $transaction->chargeAuthorization(
     	"authorization_code" => "AUTH_72btv547",
     ]
 );
-
+```
+```php
 /// Charge Authorization
+
 $transaction->checkAuthorization($fields) //$field as to be array
 ```
 Example
@@ -79,5 +84,58 @@ $transaction->checkAuthorization(
 );
 ```
 
+```php
+/// Partial_debits
+
+$transaction->partial_debit($fields) //$field as to be array
+```
+
+```php
+/// Total Transaction
+
+$transaction->transactionTotal($fields) //$field as to be array
+```
+Example
+
+```php
+$transaction->transactionTotal([
+    'perPage' => 5,
+    'page' => 1
+]); 
+
+```
+
+```php
+// List transactions carried out on your integration
+
+$transaction->transactionTotal($fields) //$field as to be array
+```
+Example
+
+```php
+$transaction->listTransaction([
+    'perPage' => 5,
+    'page' => 2
+]);
+
+```
+
+```php
+// Get details of a transaction carried out on your integration.
+
+$transaction->transactionTotal($fields) //$field as to be array
+```
+Example
+
+```php
+$transaction->fetchTransaction(0000000000); /// transaction id eg "0000000000"
+
+```
+
+```php
+/// Verify Transaction
+
+$transaction->verifyTransaction(reference) // passing the reference gotten from the initialization of the transaction
+```
 
 

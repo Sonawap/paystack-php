@@ -16,9 +16,10 @@ use Sonawap\Paystack\Transaction\Initiate\ExcuteAction;
  * @facebook - https://facebook.com/paul.sola.986
  * 
  **/
-require 'config.php';
+require 'config/config.php';
+require 'config/urlTransactions.php';
 require(dirname(__DIR__).'../vendor/autoload.php');
-require 'excute.php';
+require 'init/excute.php';
 
 class Transaction extends ExcuteAction
 {

@@ -14,24 +14,6 @@
  * 
  **/
 /**
-Set your SECRET Key and Public Key here.
-Go to setting -> developer to see your keys*/
-
-
-// SET SECRET KEY HERE
-define(
-	'SECRET', 
-	'Your Secret key' ///replace with your secret key
-);
-
-// SET PUBLIC KEY HERE
-
-define(
-	'PUBLIC',
-	'Your public key' ///replace with your public key
-);
-
-
 /*Transactions
 The Transactions API allows you create and manage payments on your integration*/
 

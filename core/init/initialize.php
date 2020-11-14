@@ -51,7 +51,21 @@ class InitializeAction
 	  	curl_setopt($ch,CURLOPT_RETURNTRANSFER, true); 
 
 	  	return $ch;
-  	}
+	}
+	
+	protected function putInitialize($url, $fields){
+	$fields_string = http_build_query($fields);
+	$ch = curl_init();-
+	curl_setopt($ch,CURLOPT_URL, $url);
+	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+	curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+		"Authorization: Bearer ".SECRET,
+		"Cache-Control: no-cache",
+	));
+	curl_setopt($ch,CURLOPT_RETURNTRANSFER, true); 
+	return $ch;
+}
 }
 
 // $initializeAction = new initializeAction();

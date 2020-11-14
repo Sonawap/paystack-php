@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Sonawap\\Paystack\\Transaction\\' => array($baseDir . '/core'),
+    'Sonawap\\Paystack\\Customer\\' => array($baseDir . '/core'),
 );

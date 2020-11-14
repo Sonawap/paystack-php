@@ -10,11 +10,16 @@ class ComposerStaticInitf3e9ce143addcc277aa74e04a7f02bd2
         'S' => 
         array (
             'Sonawap\\Paystack\\Transaction\\' => 29,
+            'Sonawap\\Paystack\\Customer\\' => 26,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
         'Sonawap\\Paystack\\Transaction\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/core',
+        ),
+        'Sonawap\\Paystack\\Customer\\' => 
         array (
             0 => __DIR__ . '/../..' . '/core',
         ),

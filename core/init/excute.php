@@ -20,7 +20,7 @@ namespace Sonawap\Paystack\Transaction\Initiate;
  * 
   excute a connect to paystack api
  */
-require(dirname(__DIR__).'../vendor/autoload.php');
+require(dirname(__DIR__).'../../vendor/autoload.php');
 
 require 'initialize.php';
 
@@ -42,9 +42,25 @@ class ExcuteAction extends InitializeAction
 
   	protected function excutePost($url, $fields){
   		$ch = $this->postInitialize($url, $fields);
-  		$result = curl_exec($ch);
-  		return $result;
-  	}
+		$result = curl_exec($ch);
+		$err = curl_error($ch);
+		if ($err) {
+	        return "cURL Error #:" . $err;
+	    } else {
+	        return $result;
+	    }
+	  }
+	  
+	protected function excutePut($url, $fields){
+		$ch = $this->putInitialize($url, $fields);
+		$result = curl_exec($ch);
+		$err = curl_error($ch);
+		if ($err) {
+	        return "cURL Error #:" . $err;
+	    } else {
+	        return $result;
+	    }
+	}
 
   	protected function checkParams(array $params){
   		if(is_array($params))

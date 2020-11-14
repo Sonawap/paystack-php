@@ -1,5 +1,8 @@
 <?php
-namespace Transaction;
+namespace Sonawap\Paystack\Transaction;
+
+use Sonawap\Paystack\Transaction\Initiate\ExcuteAction;
+
 /**
  * Paystack - Use paystack apis
  * Version 1.0.
@@ -14,9 +17,10 @@ namespace Transaction;
  * 
  **/
 require 'config.php';
-require 'request/excute.php';
+require('../../vendor/autoload.php');
+require 'excute.php';
 
-class transaction extends \Transaction\Excute\excuteAction
+class Transaction extends ExcuteAction
 {
 
 	// Initialize a transaction from your backend

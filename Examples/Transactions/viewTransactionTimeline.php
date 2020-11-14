@@ -1,7 +1,7 @@
 <?php
-require_once('../../core/transactions.php');
+require '../../vendor/autoload.php';
 
-use Transaction\transaction as transaction;
+use Sonawap\Paystack\Transaction\Transaction;
 
 $transaction = new transaction();
 	// Get details of a transaction carried out on your integration.

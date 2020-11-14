@@ -1,5 +1,5 @@
 <?php
-namespace Transaction\Excute\initializeAction;
+namespace Sonawap\Paystack\Transaction\Initiate;
 /**
  * Paystack - Use paystack apis
  * Version 1.0.
@@ -17,7 +17,7 @@ namespace Transaction\Excute\initializeAction;
  * 
   initiate a connect to paystack api
  */
-class initializeAction
+class InitializeAction
 {
 	protected function initialize($url){
   		$curl = curl_init();

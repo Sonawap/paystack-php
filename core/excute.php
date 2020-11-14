@@ -1,9 +1,7 @@
 <?php
-namespace Transaction\Excute;
+namespace Sonawap\Paystack\Transaction\Initiate;
 
-use Transaction\Excute\initializeAction\initializeAction;
 
-require 'initialize.php';
 /**
  * Paystack - Use paystack apis
  * Version 1.0.
@@ -22,9 +20,13 @@ require 'initialize.php';
  * 
   excute a connect to paystack api
  */
-class excuteAction extends initializeAction
+require('../../vendor/autoload.php');
+require 'initialize.php';
+
+class ExcuteAction extends InitializeAction
 {
-	 protected function excute($url, array $params){
+	protected $_attributes = [];
+	protected function excute($url, array $params){
 		
   		$curl = $this->initialize($url.$this->get($params));
   		$response = curl_exec($curl);

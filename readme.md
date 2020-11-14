@@ -1,36 +1,49 @@
-<h1>Sonawap Paystack PHP library</h1>
-<h3>Helps you manage and use Packstack's api</h3>
+# Sonawap Paystack PHP library
+Helps you manage and use Packstack's api
 
-<p>To Start run</p>
+## To Start run
 
-<h3>Composer require sonawap/paystack</h3>
+```bash
+Composer require sonawap/paystack
+```
 
-<p>Go to vendor > sonawap > paystack > core > config > config.php </p>
 
-define your paystack key
+## Define your paystack key
 
-<p>Include the autoload file</p>
+Go to vendor > sonawap > paystack > core > config > config.php then replace with your key
 
+## Include the autoload file
+
+```php
 <?php
 require 'vendor/autoload.php';
+```
 
-<p>Use the Class</p>
+Using the Library
 
+Create a new file index.php
+
+```php
 use Sonawap\Paystack\Transaction\Transaction;
 use Sonawap\Paystack\Customer\Customer;
+```
+Create a new instance of the class
 
-<p>Create a new instance of the class</p>
-
+```php
 $transaction = new Transaction();
 $customer = new Customer();
+```
 
-<p>Now you have access to all the methods in the classes, see docs or example for details</p>
+Now you have access to all the methods in the classes, see docs or example for details
 
+```php
+/// initialize a transaction
 
-/// initialize a transaction 
 $transaction->initializeTransaction($fields) //$fields as to be array
+```
+Example
 
-<p>Example</p>
+```php
 $transaction->initializeTransaction(
     $fields = [
         'email' => "customer@email.com",
@@ -40,7 +53,9 @@ $transaction->initializeTransaction(
 
 /// Charge Authorization
 $transaction->chargeAuthorization($fields) //$field as to be array
-<p>Example</p>
+```
+Example
+```php
 $transaction->chargeAuthorization(
     $fields = [
         'email' => "customer@email.com",
@@ -51,7 +66,10 @@ $transaction->chargeAuthorization(
 
 /// Charge Authorization
 $transaction->checkAuthorization($fields) //$field as to be array
-<p>Example</p>
+```
+Example
+
+```php
 $transaction->checkAuthorization(
     $fields = [
         'email' => "customer@email.com",
@@ -59,6 +77,7 @@ $transaction->checkAuthorization(
     	"authorization_code" => "AUTH_72btv547",
     ]
 );
+```
 
 
 

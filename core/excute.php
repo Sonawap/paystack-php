@@ -20,7 +20,8 @@ namespace Sonawap\Paystack\Transaction\Initiate;
  * 
   excute a connect to paystack api
  */
-require('../../vendor/autoload.php');
+require(dirname(__DIR__).'../vendor/autoload.php');
+
 require 'initialize.php';
 
 class ExcuteAction extends InitializeAction

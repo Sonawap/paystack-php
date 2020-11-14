@@ -17,7 +17,7 @@ use Sonawap\Paystack\Transaction\Initiate\ExcuteAction;
  * 
  **/
 require 'config.php';
-require('../../vendor/autoload.php');
+require(dirname(__DIR__).'../vendor/autoload.php');
 require 'excute.php';
 
 class Transaction extends ExcuteAction

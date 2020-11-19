@@ -13,27 +13,31 @@
  * @facebook - https://facebook.com/paul.sola.986
  * 
  **/
-/**
-Set your SECRET Key and Public Key here.
-Go to setting -> developer to see your keys*/
+
+// The Customers API allows you create and manage customers on your integration.
 
 
-// SET SECRET KEY HERE
+// Create a customer on your integration
+
+	
 define(
-	'SECRET', 
-	'sk_test_64ad293134c658b279a1ecdf7138ceedfd8a9aa6' ///replace with your secret key
+    'CREATE_PLAN',
+    'https://api.paystack.co/plan'
 );
 
-// SET PUBLIC KEY HERE
-
 define(
-	'PUBLIC',
-	'pk_test_52e190d965738d882357fae33760b8e4150a00ae' ///replace with your public key
+    'LIST_PLANS',
+    'https://api.paystack.co/plan'
 );
 
+define(
+    'FETCH_PLAN',
+    'https://api.paystack.co/plan/'
+);
 
-
-
-
+define(
+    'UPDATE_PLAN',
+    'https://api.paystack.co/plan/'
+);
 
 ?>

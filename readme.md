@@ -26,6 +26,7 @@ Using the Library
 
 ```php
 use Sonawap\Paystack\Transaction\Transaction;
+use Sonawap\Paystack\Transaction\Plan;
 use Sonawap\Paystack\Customer\Customer;
 ```
 Create a new instance of the class
@@ -33,110 +34,137 @@ Create a new instance of the class
 ```php
 $transaction = new Transaction();
 $customer = new Customer();
+$plan = new Plan();
 ```
 
 Now you have access to all the methods in the classes, see docs or example for details
 
+## Transaction
 ```php
 /// initialize a transaction
 
-$transaction->initializeTransaction($fields) //$fields as to be array
-```
-Example
+$transaction->initializeTransaction($fields); //$fields as to be array
 
-```php
+<!-- Example -->
+
 $transaction->initializeTransaction(
     $fields = [
         'email' => "customer@email.com",
         'amount' => "20000",
     ]
 );
-```
-```php
+
 /// Charge Authorization
 
-$transaction->chargeAuthorization($fields) //$field as to be array
-```
-Example
-```php
-$transaction->chargeAuthorization(
-    $fields = [
-        'email' => "customer@email.com",
-    	'amount' => "20000",
-    	"authorization_code" => "AUTH_72btv547",
-    ]
-);
-```
-```php
+$transaction->chargeAuthorization(array); //$field as to be array
+
 /// Check Authorization
 
-$transaction->checkAuthorization($fields) //$field as to be array
-```
-Example
+$transaction->checkAuthorization(array); //$field as to be array
 
-```php
-$transaction->checkAuthorization(
-    $fields = [
-        'email' => "customer@email.com",
-    	'amount' => "20000",
-    	"authorization_code" => "AUTH_72btv547",
-    ]
-);
-```
-
-```php
 /// Partial_debits
 
-$transaction->partial_debit($fields) //$field as to be array
-```
+$transaction->partial_debit(array); //$field as to be array
 
-```php
-/// Total Transaction
-
-$transaction->transactionTotal($fields) //$field as to be array
-```
-Example
-
-```php
 $transaction->transactionTotal([
     'perPage' => 5,
     'page' => 1
 ]); 
 
-```
 
-```php
 // List transactions carried out on your integration
 
-$transaction->transactionTotal($fields) //$field as to be array
-```
-Example
+$transaction->transactionTotal(array); //$field as to be array
 
-```php
-$transaction->listTransaction([
-    'perPage' => 5,
-    'page' => 2
-]);
-
-```
-
-```php
 // Get details of a transaction carried out on your integration.
 
-$transaction->transactionTotal($fields) //$field as to be array
-```
-Example
+$transaction->transactionTotal(array); //$field as to be array
 
-```php
-$transaction->fetchTransaction(0000000000); /// transaction id eg "0000000000"
-
-```
-
-```php
 /// Verify Transaction
 
-$transaction->verifyTransaction(reference) // passing the reference gotten from the initialization of the transaction
+$transaction->verifyTransaction(reference); // passing the reference gotten from the initialization of the transaction
 ```
+## Customer
+
+```php
+
+// Create a Customer
+$customer->createCustomer(); // $field must be array
+
+
+// Example
+$result = $customer->createCustomer(
+    $fields = [
+        'first_name' => '',
+        'last_name' => '',
+        'email' => "customer@email.com"
+    
+    ]
+);
+
+// Desactivate Authorisation
+
+$customer->deAuth(array);
+
+// List Customers
+
+$customer->listCustomers([
+    'perPage' => 5,
+    'page' => 1
+]); 
+
+// Fetch Customer
+
+$customer->fetchCustomer("email"); ;
+
+// Update Customer
+
+$customer->updateCustomer(array);
+
+// Validate Customer
+
+$customer->validateCustomer(array);
+
+// Whitelist/Blacklist Customer
+
+$customer->wnbCustomer(array);
+
+```
+
+## Plans
+
+```php
+// Create Plan
+
+$plan->createPlan(array);
+
+// Example 
+$plan->createPlan(
+    $fields = [
+
+		'name' => "Monthly retainer",
+
+		'interval' => "monthly", 
+	
+		'amount' => "500000"
+    
+    ]
+);
+
+// Fetch Plan
+
+$plan->fetchPlan(idOrCode);
+
+// List Plans
+
+$plan->listPlans(perPage, Page);
+
+// Update Plan
+
+$plan->updatePlan(code, array);
+
+```
+
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

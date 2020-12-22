@@ -14,30 +14,32 @@
  * 
  **/
 
-// The Plan API allows you create and manage plan on your integration.
+// The product API allows you create and manage product on your integration.
 
 
 // Create a customer on your integration
 
 	
 define(
-    'CREATE_PLAN',
-    'https://api.paystack.co/plan'
+    'CREATE_PRODUCT',
+    'https://api.paystack.co/product'
+);
+
+
+define(
+    'LIST_PRODUCTS',
+    'https://api.paystack.co/product'
 );
 
 define(
-    'LIST_PLANS',
-    'https://api.paystack.co/plan'
+    'FETCH_PRODUCT',
+    'https://api.paystack.co/product/'
 );
 
 define(
-    'FETCH_PLAN',
-    'https://api.paystack.co/plan/'
+    'UPDATE_PRODUCT',
+    'https://api.paystack.co/product/'
 );
 
-define(
-    'UPDATE_PLAN',
-    'https://api.paystack.co/plan/'
-);
 
 ?>

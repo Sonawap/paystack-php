@@ -27,6 +27,8 @@ Using the Library
 ```php
 use Sonawap\Paystack\Transaction\Transaction;
 use Sonawap\Paystack\Transaction\Plan;
+use Sonawap\Paystack\Transaction\Product;
+use Sonawap\Paystack\Transaction\Invoice;
 use Sonawap\Paystack\Customer\Customer;
 ```
 Create a new instance of the class
@@ -35,6 +37,8 @@ Create a new instance of the class
 $transaction = new Transaction();
 $customer = new Customer();
 $plan = new Plan();
+$product = new Product();
+$invoice = new Invoice();
 ```
 
 Now you have access to all the methods in the classes, see docs or example for details
@@ -162,6 +166,112 @@ $plan->listPlans(perPage, Page);
 // Update Plan
 
 $plan->updatePlan(code, array);
+
+```
+
+## Product
+
+```php
+// Create Product
+
+$product->createProduct(array);
+
+// Example 
+$product->createProduct(
+    $fields = [
+        'description' => "Product Six Description",
+        'name' => "Product Six",
+        'price' => 500000,
+        'currency' => "USD",
+        'limited' => false,
+        'quantity' => 100,
+    ]
+);
+
+// Fetch Product
+
+$product->fetchProduct(idOrCode);
+
+// List Products
+
+$product->listProducts(perPage, Page);
+
+// Update Product
+
+$product->updateProduct(code, array);
+
+```
+
+## Invoice
+
+```php
+// Create Product
+
+$invoice->createInvoice(array);
+
+// Example 
+$invoice->createInvoice(
+    $fields = [
+
+        "description" => "a test invoice",
+        "line_items"=> [
+            {
+                "name" => "item 1", 
+                "amount" => 20000
+            },
+
+            {
+                "name" => "item 2", 
+                "amount" => 20000
+            }
+        ],
+        "tax" => [
+            {
+                "name" => "VAT", 
+                "amount" => 2000
+            }
+        ],
+        "customer" => "CUS_xwaj0txjryg393b",
+        "due_date" => "2020-07-08"
+
+    ];
+);
+
+// Send Nofication
+
+$invoice->sendNotification($fields = []);
+
+// Archive Invoice
+
+$invoice->archiveInvoice($fields = []);
+
+// Total Invoice
+
+$invoice->totalInvoice();
+
+// List Invoices
+
+$invoice->listInvoices() ;  //perPage = 5, customer = Customer_id
+
+// View Invoice
+
+$invoice->fetchInvoice($idOrCode) ;  
+
+// View Invoice
+
+$invoice->finalizeInvoice() ; 
+
+// Verify Invoice
+
+$invoice->verifyInvoice($idOrCode) ;  
+
+// Archive Invoice
+
+$invoice->verifyInvoice($idOrCode) ;  
+
+// Update Product
+
+$invoice->updateInvoice(code, array);
 
 ```
 
